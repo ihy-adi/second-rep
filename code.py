@@ -1,20 +1,32 @@
 lim = 5
-lo = 0
+low = 0
 point = 1
 flg = True
 
 while True:
+    if point == 13:
+        print("*", end="")
+        break
     if flg:
-        print("*")
+        print("*", end="")
         low = low + 1
         flg = False
-    elif not flg:
-        print(point)
+        if low == lim:
+            print("\n", end="")
+            low = 0
+    if not flg:
+        print(point, end="")
         point = point + 1
         low = low + 1
         flg = True
-    if low == lim:
-        print("\n")
-    if point == 12:
-        print("*")
-        break
+        if low == lim:
+           print("\n", end="")
+           low = 0
+
+#
+# I want to print this
+# *1*2*
+# 3*4*5
+# *6*7*
+# 8*9*10
+# *11*12*
